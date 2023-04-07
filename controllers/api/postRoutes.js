@@ -29,7 +29,7 @@ router.delete('/', isAuth, async (req,res) => {
         if (postData) {
             res.status(200).json(postData);
         } else {
-            res.status(404).json({message: "your search for " + req.params.id + " could not be found in the system."});
+            res.status(404).json({message: "No post was found with that ID!"});
         }
     } catch (err) {
         res.status(500).json(err)
