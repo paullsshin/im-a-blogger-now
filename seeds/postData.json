@@ -1,0 +1,17 @@
+[
+    {
+        "title": "What is the best way to learn coding?",
+        "contents": "Hands-on experience is the best way in my personal opinion",
+        "user_id": 1
+    },
+    {
+        "title": "What's your Weakness?",
+        "contents": "My weakness when it comes to coding, is the backend.",
+        "user_id": 2
+    },
+    {
+        "title": "Which company would you like to work for?",
+        "contents": "Nintendo, Pokemon, or even Google",
+        "user_id": 3
+    }
+]

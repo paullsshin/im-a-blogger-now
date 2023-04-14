@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { up } = require('inquirer/lib/utils/readline');
 const { Post } = require('../../models');
 const isAuth = require("../../utils/auth");
 
@@ -13,6 +14,29 @@ router.post('/', async (req,res) => {
         res.status(200).json(newPost);
     } catch (err) {
         res.status(400).json(err);
+    }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const updatePost = await Post.update({
+            title: req.body.title,
+            content: req.body.contents
+        }, {
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        if (!updatePost) {
+            res.status(404).json({ message: 'No post found!' });
+            return;
+        }
+
+        res.status(200).json(updatePost);
+    } catch (err) {
+        res.status(500).json(err);
     }
 });
 
