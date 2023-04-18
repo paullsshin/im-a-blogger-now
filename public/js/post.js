@@ -1,5 +1,6 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
+    
   
     // const name = document.querySelector('#project-name').value.trim();
     // const needed_funding = document.querySelector('#project-funding').value.trim();
