@@ -1,4 +1,4 @@
-<div class="card">
+{{!-- <div class="card">
   <div class="card-header">
     <h2>Sign up</h2>
 
@@ -18,4 +18,49 @@
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="./js/login.js"></script> --}}
+
+<div class="box m-6">
+  <form class="signup-form">
+
+    <div class="field">
+      <label for="username-signup" class="label">Username</label>
+      <div class="control has-icons-left has-icons-right">
+        <input type="text" id="username-signup" class="input" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email-signup" class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+        <input type="text" id="email-signup" class="input" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="password-signup" class="label">Password</label>
+      <div class="control has-icons-left has-icons-right">
+
+        <input type="password" id="password-signup" class="input" />
+        <span class="icon is-small is-left">
+          <i class="fas fa-key"></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="control">
+      <button type="submit" class="button is-primary">Create New Account</button>
+    </div>
+
+  </form>
+
+</div>
+
+
+<script src="/javascript/signup.js"></script>
