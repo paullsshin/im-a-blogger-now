@@ -1,9 +1,9 @@
 async function signupFormHandler(event) {
     event.preventDefault();
-  
+    
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-  
+    
     if (username && password) {
       const response = await fetch('/api/users', {
         method: 'post',
@@ -13,7 +13,8 @@ async function signupFormHandler(event) {
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
+      
+      console.log(username, password);
       if (response.ok) {
         // console.log('SUCCESS ---------------------------------------------------')
   
@@ -27,5 +28,5 @@ async function signupFormHandler(event) {
     }
   }
   
-  
+
   document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
