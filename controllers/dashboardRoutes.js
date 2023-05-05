@@ -8,16 +8,14 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        attributes: [
-            'id',
-            'title',
-            'post-content',
-            'created_at'
-        ],
+//        attributes: [
+  //        'title',
+    //      'body'
+      //  ],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+//                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -30,8 +28,11 @@ router.get('/', withAuth, (req, res) => {
         ]
     })
     .then(PostData => {
-        const posts = PostData.map(post.get({plain: true}));
-        res.render('dashboard', {posts, loggedIn: true});
+        const posts = PostData.map((post) => post.get({plain: true}));
+        res.render('homepage', {
+          layout: 'dashboard',
+          posts,
+        });
     })
     .catch(err => {
         console.log(err);
